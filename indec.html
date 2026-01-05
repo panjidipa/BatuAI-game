@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Flappy BATUAI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #78b6ff 0%, #4b6fcc 100%);
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 28px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    canvas {
+      display: block;
+      margin: auto;
+      background: skyblue;
+      border: 3px solid #333;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+    @keyframes shake {
+      0% { transform: translate(0px, 0px); }
+      25% { transform: translate(4px, -4px); }
+      50% { transform: translate(-4px, 4px); }
+      75% { transform: translate(4px, 4px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    canvas.shake { animation: shake 0.3s; }
+    .score-popup {
+      position: absolute;
+      left: 50%;
+      top: 100px;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: gold;
+      font-weight: bold;
+      animation: pop 0.8s ease-out forwards;
+    }
+    @keyframes pop {
+      0% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -40px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Flappy BATUAI</h1>
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+  <div class="footer">Press SPACE to flap 🪨</div>
+  <script src="game.js"></script>
+</body>
+</html>
